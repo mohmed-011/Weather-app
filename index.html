@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>weatherio</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-dark">
+    <section class="py-5">
+      <div class="container">
+        <input
+          type="text"
+          class="w-100 rounded-pill border-0 bg-black bg-opacity-50 py-3 ps-4 mb-5 text-white"
+          placeholder="Search on city"
+          id="searchInput"
+        />
+      </div>
+      <div class="container d-none" id="mainData">
+        <div class="row gy-4">
+          <div class="col-lg-3">
+            <div class="inner bg-black bg-opacity-50 rounded-5 p-4">
+              <div
+                class="uper d-flex justify-content-between align-items-center"
+              >
+                <p class="text-white fs-5">Now</p>
+                <p class="text-white fs-5" id="city"></p>
+              </div>
+              <div class="body">
+                <div class="d-flex justify-content-around align-items-center">
+                  <h1 class="text-white" id="degree_1">33.4 oC</h1>
+                  <img
+                    src="https://cdn.weatherapi.com/weather/64x64/day/116.png"
+                    id="icon_1"
+                    alt=""
+                  />
+                </div>
+
+                <p id="status_1" class="text-center text-white py-2">Clear</p>
+                <hr class="text-white" />
+              </div>
+              <div class="">
+                <div class="d-flex py-2">
+                  <i
+                    class="fa-regular fa-calendar fs-4 pe-2 text-white m-0"
+                  ></i>
+                  <p class="text-white m-0" id="day_1">Saturday</p>
+                  <p class="text-white px-1 m-0" id="date_n">,15</p>
+                  <p class="text-white m-0" id="month_1">June</p>
+                </div>
+              </div>
+              <hr class="text-white" />
+              <h4 class="text-white pb-3">Today at :</h4>
+              <div class="Forecast">
+                <div
+                  class="ForecastDay d-flex justify-content-around text-white align-items-center pb-2"
+                >
+                  <p class="m-0">1 AM</p>
+                  <div><img class="H1" alt="" /></div>
+                  <p class="Hd1 m-0">22 oC</p>
+                </div>
+                <div
+                  class="ForecastDay d-flex justify-content-around text-white align-items-center pb-2"
+                >
+                  <p class="m-0">5 AM</p>
+                  <div><img class="H1" alt="" /></div>
+                  <p class="Hd1 m-0">22 oC</p>
+                </div>
+                <div
+                  class="ForecastDay d-flex justify-content-around text-white align-items-center pb-2"
+                >
+                  <p class="m-0">9 AM</p>
+                  <div><img class="H1" alt="" /></div>
+                  <p class="Hd1 m-0">22 oC</p>
+                </div>
+                <div
+                  class="ForecastDay d-flex justify-content-around text-white align-items-center pb-2"
+                >
+                  <p class="m-0">1 PM</p>
+                  <div><img class="H1" alt="" /></div>
+                  <p class="Hd1 m-0">22 oC</p>
+                </div>
+                <div
+                  class="ForecastDay d-flex justify-content-around text-white align-items-center pb-2"
+                >
+                  <p class="m-0">5 PM</p>
+                  <div><img class="H1" alt="" /></div>
+                  <p class="Hd1 m-0">22 oC</p>
+                </div>
+                <div
+                  class="ForecastDay d-flex justify-content-around text-white align-items-center pb-2"
+                >
+                  <p class="m-0">9 PM</p>
+                  <div><img class="H1" alt="" /></div>
+                  <p class="Hd1 m-0">22 oC</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <div class="inner bg-black bg-opacity-50 rounded-5 p-5">
+              <h3 class="text-white pb-3">Todays Highlights :</h3>
+              <div class="row gy-4">
+                <div class="col-lg-3">
+                  <div class="inner2 p-3 bg-dark rounded-2">
+                    <div class="d-flex justify-content-between">
+                      <p class="text-white">raining</p>
+                      <div>
+                        <img
+                          src="images/rain_icon.png"
+                          class="icon_0"
+                          alt="rain_icon"
+                        />
+                      </div>
+                    </div>
+                    <p class="text-white text-center m-1" id="rain_1">20%</p>
+                  </div>
+                </div>
+
+                <div class="col-lg-3">
+                  <div class="inner2 p-3 bg-dark rounded-2">
+                    <div class="d-flex justify-content-between">
+                      <p class="text-white">wind speed</p>
+                      <div>
+                        <img
+                          src="images/wind_icon.png"
+                          class="icon_0"
+                          alt="wind_icon"
+                        />
+                      </div>
+                    </div>
+                    <p class="text-white text-center m-1" id="wind_1">18km/h</p>
+                  </div>
+                </div>
+
+                <div class="col-lg-3">
+                  <div class="inner2 p-3 bg-dark rounded-2">
+                    <div class="d-flex justify-content-between">
+                      <p class="text-white">direction</p>
+                      <div>
+                        <img
+                          src="images/compass_icon.png"
+                          class="icon_0"
+                          alt="compass_icon"
+                        />
+                      </div>
+                    </div>
+                    <p class="text-white text-center m-1" id="dir_1">East</p>
+                  </div>
+                </div>
+
+                <div class="col-lg-3">
+                  <div class="inner2 p-3 bg-dark rounded-2">
+                    <div class="d-flex justify-content-between">
+                      <p class="text-white">humidity</p>
+                      <div>
+                        <img
+                          src="images/humidity.png"
+                          class="icon_0"
+                          alt="humidity_icon"
+                        />
+                      </div>
+                    </div>
+                    <p class="text-white text-center m-1" id="humidity">
+                      100 %
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="inner2 p-3 bg-dark rounded-2 d-flex">
+                    <div class="min w-50">
+                      <p class="text-white text-center">min</p>
+                      <div
+                        class="d-flex align-items-center justify-content-center"
+                      >
+                        <div class="m-0 pe-2">
+                          <img src="images/min.png" alt="" />
+                        </div>
+                        <p class="text-white text-center m-1 px-3" id="minDeg">
+                          15 C
+                        </p>
+                      </div>
+                    </div>
+                    <div class="max w-50">
+                      <p class="text-white text-center">max</p>
+                      <div
+                        class="d-flex align-items-center justify-content-center"
+                      >
+                        <p class="text-white text-center m-1 px-3" id="maxDeg">
+                          15 C
+                        </p>
+                        <div class="m-0 ps-2">
+                          <img src="images/max.png" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="inner2 p-3 bg-dark rounded-2 d-flex">
+                    <div class="min w-50">
+                      <p class="text-white text-center">Sunrise</p>
+                      <div
+                        class="d-flex align-items-center justify-content-center"
+                      >
+                        <div class="m-0 pe-2">
+                          <img src="images/sunrise.png" alt="" />
+                        </div>
+                        <p class="px-3 text-white text-center m-1" id="Sunrise">
+                          15 C
+                        </p>
+                      </div>
+                    </div>
+                    <div class="max w-50">
+                      <p class="text-white text-center">Sunset</p>
+                      <div
+                        class="d-flex align-items-center justify-content-center"
+                      >
+                        <p class="px-3 text-white text-center m-1" id="Sunset">
+                          15 C
+                        </p>
+                        <div class="ps-2 m-0">
+                          <img src="images/sunset.png" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-3">
+                  <div class="inner2 p-3 bg-dark rounded-2">
+                    <div class="d-flex justify-content-between">
+                      <p class="text-white">Visibility</p>
+                      <div>
+                        <img
+                          src="images/visibility.png"
+                          class="icon_0"
+                          alt="visibility_icon"
+                        />
+                      </div>
+                    </div>
+                    <p class="text-white text-center m-1" id="Visibility">
+                      100 %
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col-lg-3">
+                  <div class="inner2 p-3 bg-dark rounded-2">
+                    <div class="d-flex justify-content-between">
+                      <p class="text-white">Pressure</p>
+                      <div>
+                        <img
+                          src="images/pressure.png"
+                          class="icon_0"
+                          alt="Pressure_icon"
+                        />
+                      </div>
+                    </div>
+                    <p class="text-white text-center m-1" id="Pressure">
+                      100 %
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col-lg-3">
+                  <div class="inner2 p-3 bg-dark rounded-2">
+                    <div class="d-flex justify-content-between">
+                      <p class="text-white">clouds</p>
+                      <div>
+                        <img
+                          src="images/cloud_icon.png"
+                          class="icon_0"
+                          alt="cloud_icon"
+                        />
+                      </div>
+                    </div>
+                    <p class="text-white text-center m-1" id="cloud">100 %</p>
+                  </div>
+                </div>
+
+                <div class="col-lg-3">
+                  <div class="inner2 p-3 bg-dark rounded-2">
+                    <div class="d-flex justify-content-between">
+                      <p class="text-white">Fahrenheit</p>
+                      <div>
+                        <img
+                          src="images/fahrenheit_icon.png"
+                          class="icon_0"
+                          alt="fahrenheit_icon"
+                        />
+                      </div>
+                    </div>
+                    <p class="text-white text-center m-1" id="Fahrenheit">
+                      100 %
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr class="text-white" />
+              <h3 class="text-white pb-3">6 Days Forecast :</h3>
+              <div class="row gy-4">
+                <div class="col-lg-4">
+                  <div
+                    class="inner2 p-3 bg-dark rounded-2 d-flex flex-column align-items-center justify-content-center"
+                  >
+                    <p id="Forecast_7_day" class="text-white">Thursday</p>
+                    <div class="d-flex align-items-center ">
+                      <img
+                      id="Forecast_7_img"
+                      src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+                      alt=""
+                    />
+                    <p id="Forecast_7_deg" class="text-white m-0">36.9 °C</p>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div
+                    class="inner2 p-3 bg-dark rounded-2 d-flex flex-column align-items-center justify-content-center"
+                  >
+                    <p id="Forecast_7_day" class="text-white">Thursday</p>
+                    <div class="d-flex align-items-center ">
+                      <img
+                      id="Forecast_7_img"
+                      src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+                      alt=""
+                    />
+                    <p id="Forecast_7_deg" class="text-white m-0">36.9 °C</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div
+                    class="inner2 p-3 bg-dark rounded-2 d-flex flex-column align-items-center justify-content-center"
+                  >
+                    <p id="Forecast_7_day" class="text-white">Thursday</p>
+                    <div class="d-flex align-items-center ">
+                      <img
+                      id="Forecast_7_img"
+                      src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+                      alt=""
+                    />
+                    <p id="Forecast_7_deg" class="text-white m-0">36.9 °C</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div
+                    class="inner2 p-3 bg-dark rounded-2 d-flex flex-column align-items-center justify-content-center"
+                  >
+                    <p id="Forecast_7_day" class="text-white">Thursday</p>
+                    <div class="d-flex align-items-center ">
+                      <img
+                      id="Forecast_7_img"
+                      src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+                      alt=""
+                    />
+                    <p id="Forecast_7_deg" class="text-white m-0">36.9 °C</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div
+                    class="inner2 p-3 bg-dark rounded-2 d-flex flex-column align-items-center justify-content-center"
+                  >
+                    <p id="Forecast_7_day" class="text-white">Thursday</p>
+                    <div class="d-flex align-items-center ">
+                      <img
+                      id="Forecast_7_img"
+                      src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+                      alt=""
+                    />
+                    <p id="Forecast_7_deg" class="text-white m-0">36.9 °C</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div
+                    class="inner2 p-3 bg-dark rounded-2 d-flex flex-column align-items-center justify-content-center"
+                  >
+                    <p id="Forecast_7_day" class="text-white">Thursday</p>
+                    <div class="d-flex align-items-center ">
+                      <img
+                      id="Forecast_7_img"
+                      src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+                      alt=""
+                    />
+                    <p id="Forecast_7_deg" class="text-white m-0">36.9 °C</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p href="#" class="text-white text-center mt-5 footee">
+          This Page Made By <a href="https://www.linkedin.com/in/mohamed-faragallah-613b32295/" target="_blank" class="text-decoration-none text-white fw-medium"> @Mohmed Faragallah</a>
+        </p>
+      </div>
+    </section>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

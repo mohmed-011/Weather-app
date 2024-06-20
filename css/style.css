@@ -1,0 +1,64 @@
+.min {
+  border-right: 1px solid rgb(97, 95, 95);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Nunito", sans-serif;
+}
+.ForecastDay {
+  transition: all 0.5s;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+.ForecastDay:hover {
+  background-color: rgba(238, 228, 228, 0.214) !important;
+}
+hr {
+  color: rgb(82, 82, 82) !important;
+  margin: 20px 0;
+}
+.inner2 {
+  transition: all 0.5s;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+.inner {
+ box-shadow: inset 2px 2px 10px rgba(0,0,0,1),
+  inset -1px -1px 5px rgba(255, 255, 255, 0.6) !important;
+}
+.inner2:hover {
+  background-color: rgba(76, 68, 164, 0.765) !important;
+  transform: scale(1.08);
+}
+p {
+  font-size: 18px !important;
+  font-weight: 500;
+}
+input{
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  box-shadow: inset 2px 2px 10px rgba(0,0,0,1),
+  inset -1px -1px 5px rgba(255, 255, 255, 0.6) !important;
+}
+input:focus{
+  border: none !important;
+  outline: none !important;
+}
+.icon_0{
+  width: 30px;
+  height: 30px;
+}
+
+
+@media (min-width: 1400px) {
+  .container-xxl,
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 1300px;
+  }
+}
